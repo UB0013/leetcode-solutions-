@@ -12,6 +12,7 @@ class Solution:
             freqs2[s2[r]] = 1+ freqs2.get(s2[r], 0 )
             if r-l+1 > len(s1):
                 freqs2[s2[l]] -= 1
+                #we will have to delete zero frequecies if we sue a dictionary -- not required if using array of 26 
                 if freqs2[s2[l]] == 0:
                     del freqs2[s2[l]]
                 l= l+1 
