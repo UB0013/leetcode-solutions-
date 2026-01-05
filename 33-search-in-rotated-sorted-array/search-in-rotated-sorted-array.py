@@ -10,6 +10,10 @@ class Solution:
 
             if target == nums[mid]:
                 return mid 
+
+            # from this poit it is guaranteed that target != nums of mid 
+
+
             # right is sorted 
             if nums[mid]<=  nums[r]:
                 # target found  in right 
@@ -18,7 +22,7 @@ class Solution:
                 else : #target in left discard right 
                     r = mid-1
             #left is sorted check in left 
-            elif  nums[mid] > nums[r] :
+            else:
                 if nums[mid] > target >= nums[l]:
                     r = mid -1
                 else : #not found in left discard left 
