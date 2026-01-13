@@ -17,8 +17,10 @@ class Codec:
                 res.append("N")
                 return 
             res.append(str(root.val))
+           
             dfs (root.left)
             dfs(root.right)
+            
             
         dfs(root)
         print ( ",".join(res))
