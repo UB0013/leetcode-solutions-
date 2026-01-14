@@ -29,9 +29,11 @@ class Solution:
         if matrix[0][0] ==0 :
             for r in range(rows):
                 matrix[r][0] = 0 
+      
         if rowzero == True :
             for i in range(cols):
                 matrix[0][i] = 0 
+        
 
 
        
