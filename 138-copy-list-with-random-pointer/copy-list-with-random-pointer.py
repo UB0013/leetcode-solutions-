@@ -9,33 +9,18 @@ class Node:
 
 class Solution:
     def copyRandomList(self, head: 'Optional[Node]') -> 'Optional[Node]':
-        curr = head 
-
         copymap = {None:None}
-
-
-        while curr :
-            node =  Node(curr.val)
-            copymap[curr]  = node 
+        curr = head
+        while curr : 
+            copymap[curr] = Node(curr.val)
             curr = curr.next 
+        print (copymap.items())
         
-        for value in copymap:
-            if value : 
-                copy = copymap[value] 
-                copy.next = copymap[value.next]
-                copy.random = copymap[value.random]
-
+        for key,value  in copymap.items():
+            if key and value : 
+                value.random = copymap[key.random]
+                value.next = copymap[key.next]
         return copymap[head]
 
-        
-
-        
-        
-        """{
-            node : copynode  
 
 
-
-        }"""
-
-        
