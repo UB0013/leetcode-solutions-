@@ -1,16 +1,17 @@
 class Solution:
     def subsets(self, nums: List[int]) -> List[List[int]]:
-        stack = []
         res = []
+        stack = []
 
-        def dfs (i, stack):
-            if i == len(nums) :
+        i=0 
+
+        def dfs (stack, i):
+            if i == len (nums) :
                 res.append(stack.copy())
                 return 
             stack.append(nums[i])
-            dfs (i+1,stack)
+            dfs(stack,i+1)
             stack.pop()
-            dfs(i+1, stack)
-        dfs (0,stack)
+            dfs (stack,i+1)
+        dfs (stack,0)
         return res 
-        
