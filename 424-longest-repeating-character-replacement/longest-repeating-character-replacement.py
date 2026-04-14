@@ -1,20 +1,43 @@
 class Solution:
     def characterReplacement(self, s: str, k: int) -> int:
+        mapp = {}
 
         l = 0 
-        r= 0 
-        mapp = {}
-        res =0
+        r = 0
+        final_result = 0 
 
-        while r< len(s):
-            c = s[r]
-            mapp[s[r]] = 1 + mapp.get(s[r],0)
-            while (r-l+1) - max(mapp.values()) > k :
-                mapp[s[l]] -= 1 
+        
+        for r in range (len(s)): 
+            mapp[s[r]] = 1 + mapp.get(s[r], 0)
+            max_freq = max(mapp.values()) #O(n)
+            len_curr = r-l+1
+            result = len_curr-max_freq
+            while (r - l + 1) - max_freq  > k :
+                mapp[s[l]] =  mapp[s[l]] - 1 
                 l = l +1 
-            res = max(res,r-l+1)
-            r = r + 1 
-        return res 
+            #print (final_result ) 
+            final_result = max(r-l+1 ,  final_result) 
+        return final_result
+        
+            
 
 
-       
+            
+            
+
+
+
+
+
+
+
+
+
+
+            
+
+            
+
+
+
+        
