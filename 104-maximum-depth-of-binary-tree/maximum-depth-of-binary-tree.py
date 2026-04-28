@@ -5,18 +5,21 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    def maxDepth(self, root: Optional[TreeNode]) -> int:
-        def dfs (root) : # 3
+    def maxDepth(self, root: Optional[TreeNode]) -> int:      
+        def dfs (root ): #dfs(3)                                   
             if not root : 
                 return 0 
-            left = dfs (root.left) # 1 
-            right = dfs (root.right) # 2
-            # 1 
-
-            return 1 + max(left,right) # 1 + 2  = 3 
-
+            left = dfs(root.left) # 1
+            right = dfs (root.right)   # 2                    
+            return  (1 + max (left,right))   #1 + ( 2)
         return dfs (root)
-         
+
+
+
+
+        
+        
+        
 
 
         
