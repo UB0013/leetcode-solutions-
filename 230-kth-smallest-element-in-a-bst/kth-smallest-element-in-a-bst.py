@@ -7,6 +7,7 @@
 class Solution:
     def kthSmallest(self, root: Optional[TreeNode], k: int) -> int:
         count = 0 
+        arr = [ ]
         result = root.val
         def dfs (root):
             nonlocal count 
@@ -14,12 +15,16 @@ class Solution:
             if not root :
                 return 
             dfs (root.left)
-            count += 1 
-            if count  == k : 
-                result = root.val 
+            arr.append(root.val)
+            # count += 1 
+            # if count  == k : 
+            #     result = root.val 
             dfs (root.right)
         dfs (root)
-        return result 
+        print(arr)
+        return arr[k-1] 
+
+
 
 
 
