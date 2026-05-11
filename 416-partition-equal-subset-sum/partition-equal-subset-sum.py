@@ -1,3 +1,5 @@
+
+        
 class Solution:
     def canPartition(self, nums: List[int]) -> bool:
         if sum (nums)%2 ==1 :
@@ -18,6 +20,6 @@ class Solution:
         return False
             
 
+
         
-             
        
