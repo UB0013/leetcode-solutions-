@@ -1,21 +1,32 @@
 class Solution:
     def permute(self, nums: List[int]) -> List[List[int]]:
-        included = [False] * len(nums)
-        stack =[]
-        res = [] 
-        def dfs ():
-            if len(stack)== len(nums) :
-                res.append(stack.copy())
-                return
-            for i in range (len(nums)):
-                if included[i] == True : 
+        subset = []
+        result = [] 
+        n= len (nums)
+        used = [False] * n 
+        print ( used)
+        def dfs (i) : 
+            if len(subset) == n :
+                result.append(subset.copy())
+                return 
+            for i in range (n): 
+                if used[i] : 
                     continue 
-                stack.append(nums[i])
-                included[i] = True 
-                dfs ()
-                stack.pop()
-                included[i] =False 
-        dfs ()
-        return res 
-            
+                used[i] = True 
+                subset.append(nums[i])
+                dfs (i+1)
+                subset.pop()
+                used[i] = False 
+        dfs(0)
+        return result 
 
+
+
+
+
+
+
+
+
+
+        
