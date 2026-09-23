@@ -13,15 +13,10 @@ class Solution:
 
         while l<= r: 
             if people[l] + people[r] <= limit :
-                boat +=1 
                 l += 1
-                r -= 1
-            elif people[l] + people[r] > limit:
-                boat +=1 
-                r -= 1 
-            elif l == r : 
-                boat +1 
-                l+=1
+            r-=1
+            boat +=1 
+            
         return boat
 
 
